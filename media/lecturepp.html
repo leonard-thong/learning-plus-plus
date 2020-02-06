@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lecture Plus Plus</title>
+    <link rel="stylesheet" href="./stylehackfinal.css" />
+    <style></style>
+  </head>
+  <script src="linker.js"></script>
+  <script src="output.js"></script>
+  <body>
+    <section class="hero">
+      <div id="logoPng" class="Logo">
+        <img src="./L++Logo.png" />
+      </div>
+      <div class="hero-inner">
+        <h1 id="questionText">What would you like to do?</h1>
+      </div>
+      <div id="computerDiv" class="Computer">
+        <img src="./Upload_Computer.png" onclick="uploadFile()" />
+      </div>
+      <div id="ytDiv" class="YT">
+        <img src="./Upload_YT.png" onclick="pasteLink()" />
+      </div>
+    </section>
+    <input id="pasteLinkTB" class="pltb" />
+    <button id="pasteLinkBT" class="plbt" onclick="uploadFileTwo()">
+      Process the Video
+    </button>
+    <button id="temporary" class="temporary" onclick="outputFn()">
+      Output the Result
+    </button>
+    <table class="formclass">
+      <ul class="ulclass"></ul>
+    </table>
+
+    <script>
+      const electron = require("electron");
+      const { ipcRenderer } = electron;
+      const ul = document.querySelector("ul");
+
+      ipcRenderer.on("item:key", function(e, key) {
+        const li = document.createElement("li");
+        const itemText = document.createTextNode(key);
+        li.appendChild(itemText);
+        ul.appendChild(li);
+      });
+
+      ipcRenderer.on("item:add", function(e, content) {
+        const li = document.createElement("li");
+        const itemText = document.createTextNode(content);
+        // li.appendChild(itemText);
+        ul.appendChild(itemText);
+      });
+    </script>
+  </body>
+</html>
