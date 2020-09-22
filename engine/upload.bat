@@ -1,1 +1,0 @@
-"C:\Users\rocha\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin\gsutil.cmd" cp "C:/Programming/Projects/Python/YHack/audio.flac" gs://yhack-bucket/
