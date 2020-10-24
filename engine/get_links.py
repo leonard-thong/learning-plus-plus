@@ -10,4 +10,4 @@ def links(element):
 
 
 if __name__ == '__main__':
-    print(links("olufasio omojokun"))
+    print(links(""))

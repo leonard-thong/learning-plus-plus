@@ -79,7 +79,7 @@ def main():
     s = file.read().decode('utf-8')
     process = Preprocess()
     word_list = process.preprocess(s)
-    json_file = open('/Users/thongyixuen/Projects/lecturepp/engine/words_dictionary.json', 'rb')
+    json_file = open('/Users/leonard/Projects/lecturepp/engine/words_dictionary.json', 'rb')
     json_string = json_file.read()
     data = (json.loads(json_string))
     rare_words = data.keys()

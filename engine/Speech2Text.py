@@ -4,7 +4,7 @@ from google.cloud.speech_v1 import enums
 
 def sample_long_running_recognize(storage_uri):
     client = speech_v1.SpeechClient.from_service_account_json(
-        "/Users/thongyixuen/Projects/lecturepp/engine/YHack-f32eab9971d3.json")
+        "/Users/leonard/Projects/lecturepp/engine/YHack-f32eab9971d3.json")
 
     # storage_uri = 'gs://cloud-samples-data/speech/brooklyn_bridge.raw'
 

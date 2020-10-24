@@ -7,20 +7,20 @@ from google.cloud.speech import enums
 from google.cloud.speech import types
 
 # Instantiates a client
-client = speech.SpeechClient.from_service_account_json("C:\Programming\Projects\Python\YHack\YHack-f32eab9971d3.json")
+client = speech.SpeechClient.from_service_account_json("")
 
 # The name of the audio file to transcribe
-# file_name = os.path.join(
-#     os.path.dirname(__file__),
-#     'resources',
-#     'audio.raw')
+file_name = os.path.join(
+    os.path.dirname(__file__),
+    'resources',
+    'audio.raw')
 
-# # Loads the audio into memory
-# with io.open(file_name, 'rb') as audio_file:
-#     content = audio_file.read()
-#     audio = types.RecognitionAudio(content=content)
+# Loads the audio into memory
+with io.open(file_name, 'rb') as audio_file:
+    content = audio_file.read()
+    audio = types.RecognitionAudio(content=content)
 
-os.system("gsutil cp C:\\Programming\\Projects\\Python\\YHack\\audio.flac gs://yhack-bucket")
+os.system("")
 
 # enums.RecognitionConfig.AudioEncoding.LINEAR16
 config = types.RecognitionConfig(
